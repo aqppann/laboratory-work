@@ -1,0 +1,67 @@
+// завдання 1
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cout<< "enter a three-digit number: ";
+    cin>> N;
+    if(N < 100 || N > 999){
+        cout<< "error: enter a positive three-digit number (100..999)\n";
+    }
+
+    int hundreds = N / 100;  
+    int dozens = (N / 10) % 10;  
+    int units = N % 10;       
+    int sum = 0;
+
+    if (hundreds > 5)
+        sum += hundreds;
+    else
+        sum += 0;   
+
+    if (dozens > 5)
+        sum += dozens;
+    else
+        sum += 0;
+
+    if (units > 5)
+        sum += units;
+    else
+        sum += 0;
+
+    cout<< "sum of digits greater than 5: " << sum;
+}
+
+// завдання 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    int code;
+    cout << "Enter product code (1-6): ";
+    cin >> code;
+
+    switch (code) {
+        case 1:
+            cout << "Product 1: price = 120 UAH, quantity = 50 pcs.\n";
+            break;
+        case 2:
+            cout << "Product 2: price = 250 UAH, quantity = 20 pcs.\n";
+            break;
+        case 3:
+            cout << "Product 3: price = 80 UAH, quantity = 100 pcs.\n";
+            break;
+        case 4:
+            cout << "Product 4: price = 300 UAH, quantity = 15 pcs.\n";
+            break;
+        case 5:
+            cout << "Product 5: price = 500 UAH, quantity = 7 pcs.\n";
+            break;
+        case 6:
+            cout << "Product 6: price = 45 UAH, quantity = 200 pcs.\n";
+            break;
+        default: 
+            cout << "Invalid product code\n";
+    }
+}
