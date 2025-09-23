@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath> 
+using namespace std;
+
+int main() {
+    float x, y;
+    cout << "Enter x: ";
+    cin >> x;
+
+    if (x >= 0) {
+        y = exp(-x) * tan(1.0 / (x * x + 8.2));
+    } else {
+        y = (0.32 * x + 2.5) / (x * x + 3);
+    }
+
+    cout << "Y = " << y;
+
+    float x1, y1;
+    cout << "\nEnter coordinate point (x1): ";
+    cin >> x1;
+    cout << "Enter coordinate point (y1): ";
+    cin >> y1;
+
+    if (x1 < 0 && y1 < 0 ) {
+     cout << "the points don't belong to the shaded region";
+   } else if (fabs(x1) + fabs(y1) <= 1) {
+    cout << "the points belong to the shaded region";
+ }else {
+     cout << "the points don't belong to the shaded region";
+}
+}
