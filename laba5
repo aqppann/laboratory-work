@@ -1,0 +1,77 @@
+// 1 завдання
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double x, y;
+    int count = 1;
+
+    while(count <= 5){
+        cout << "enter x: ";
+        cin >> x;
+        y = pow(sin(x), 5) + fabs(5 * x - 1.5);
+        cout<<"correct expression: "<< y << endl;
+        count++;
+    }
+}
+
+// 2 завдання 
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double sum = 0;
+    for (int i = 10; i <= 20; i++) {
+        sum += sqrt(i); 
+    }
+    cout << "answer = " << sum;
+}
+
+// 3 завдання 
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double a, b, h;
+
+    cout << "enter the start of the interval a: ";
+    cin >> a;
+    cout << "enter the end of the interval b: ";
+    cin >> b;
+    cout << "enter the step h: ";
+    cin >> h;
+
+    if (h <= 0) {
+        cout << "error: step must be positive" << endl;
+    }
+
+    if (a > b) {
+        cout << "the start of the interval is greater than the end\n";
+        swap(a, b);
+    }
+
+    cout << "---------------------------\n";
+    cout << ":    X     |      Y       :\n";
+    cout << "---------------------------\n";
+
+    double x = a;
+    while (x <= b) {
+        if (x < 7) {
+            cout << "Value x = " << x << " does not belong to the domain (x >= 7)\n";
+            continue;
+        }
+
+        double y = 8 + sqrt(x - 7) / (x + 5);
+
+        cout << fixed << setprecision(3);
+        cout << ": " << setw(10) << x << " : " << setw(10) << y << " :\n";
+
+        x += h;
+    }
+
+    cout << "---------------------------\n";
+}
