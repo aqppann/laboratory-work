@@ -1,0 +1,269 @@
+// 1 ex (10)
+#include <iostream>
+#include <cstdlib> 
+#include <ctime>    
+using namespace std;
+
+int main()
+{
+    const int m = 4; 
+    const int n = 3; 
+
+    int arr[m][n];
+
+    srand(time(NULL)); 
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 20;
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j];
+        cout << endl;
+    }
+    cout << endl;
+
+    int k = 0;
+
+    for(int i = 0; i < m; i++){
+        k = 0;
+        for(int j = 0; j < n; j++)
+            if(arr[i][j] % 2 == 0)
+                k++;
+        cout << "for " << i << " k = " << k << endl;
+    }
+}
+
+// 2 ex
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+    const int m = 6; 
+    const int n = 4; 
+
+    int arr[m][n];
+
+    srand(time(NULL));
+
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 20;
+
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << "\t";
+        cout << endl;
+    }
+    cout << endl;
+
+    int k = 0;
+
+    for(int j = 0; j < n; ++j){ 
+        k = 0;
+        for(int i = 0; i < m; ++i) 
+            if(arr[i][j] % 2 == 0)
+                k++;
+                
+         cout << "for " << j << " k = " << k << endl;
+    }
+}
+
+// 3 ex
+#include <iostream>
+#include <cstdlib> 
+#include <ctime>    
+using namespace std;
+
+int main()
+{
+    const int m = 5; 
+    const int n = 7; 
+
+    int arr[m][n];
+
+    srand(time(NULL)); 
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 20;
+
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << "\t";
+        cout << endl;
+    }
+    cout << endl;
+    
+    int sum = 0;
+
+    for(int i = 0; i < m; i++){
+        sum = 0; 
+        for(int j = 0; j < n; j++)
+            sum += arr[i][j]; 
+        cout << "Sum of row " << i << " = " << sum << endl;
+    }
+}
+
+// 4 ex
+#include <iostream>
+#include <cstdlib> 
+#include <ctime>    
+using namespace std;
+
+int main()
+{
+    const int m = 4;
+    const int n = 6; 
+    int arr[m][n];
+    srand(time(NULL));
+    
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 20;
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << "\t";
+        cout << endl;
+    }
+    cout << endl;
+    
+    int sum = 0;
+
+    for(int j = 0; j < n; j++){ 
+        sum = 0; 
+        for(int i = 0; i < m; i++) 
+            sum += arr[i][j]; 
+        cout << "Sum of column " << j << " = " << sum << endl;
+    }
+}
+
+// 5 ex
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+    const int m = 3; 
+    const int n = 4; 
+    int arr[m][n];
+    srand(time(NULL)); 
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 30;
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << "\t";
+        cout << endl;
+    }
+    cout << endl;
+
+    int maxv = arr[0][0]; 
+    int maxr = 0;         
+    int maxc = 0;         
+
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            if(arr[i][j] > maxv){
+                maxv = arr[i][j];
+                maxr = i;
+                maxc = j;
+            }
+        }
+    }
+   cout << maxv << " at " << maxr << "," << maxc << endl;
+}
+
+// 6 ex
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+    const int m = 4; 
+    const int n = 7; 
+    int arr[m][n];
+    srand(time(NULL)); 
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 30;
+
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << "\t";
+        cout << endl;
+    }
+    cout << endl;
+
+    int minv = arr[0][0]; 
+    int minr = 0;         
+    int minc = 0;         
+
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            if(arr[i][j] < minv){
+                minv = arr[i][j];
+                minr = i;
+                minc = j;
+            }
+        }
+    }
+   cout << minv << " at " << minr << "," << minc << endl;
+}
+
+// 15 ex
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    const int m = 3;
+    const int n = 3;
+    int arr[m][n];
+    srand(time(NULL));
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            arr[i][j] = rand() % 20;
+            
+    cout << "Array:\n";
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++)
+            cout << arr[i][j] << "\t";
+        cout << endl;
+    }
+    cout << endl;
+
+    int sum1 = 0;
+    for(int i = 0; i < m; i++)
+        sum1 += arr[i][i]; 
+
+    int sum2 = 0;
+    for(int i = 0; i < m; i++)
+        sumSecondary += arr[i][n - 1 - i]; 
+
+    cout << "sum of first diagonal = " << sum1 << endl;
+    cout << "sum of second diagonal = " << sum2 << endl;
+}
