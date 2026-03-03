@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    const int N = 4;
+    int arr[N][N];
+    srand(time(NULL));
+    int *start = &arr[0][0];            
+    for (int i = 0; i < N * N; i++) {
+        *(start + i) = rand() % 51;    
+    }
+
+    cout << "array:\n";
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << *(start + i * N + j) << "\t";
+        }
+        cout << endl;
+    }
+
+    cout << "\nmain diagonal: ";
+    for (int i = 0; i < N; i++) {
+        cout << *(start + i * N + i) << " ";
+    }
+
+    cout << "\nside diagonal: ";
+    for (int i = 0; i < N; i++) {
+        cout << *(start + i * N + (N - 1 - i)) << " ";
+    }
+
+    int even = 0;
+    int odd = 0;
+    for (int i = 0; i < N * N; i++) {
+        if (*(start + i) % 2 == 0)
+            even++;
+        else
+            odd++;
+    }
+
+    cout << "\nthe number of even: " << even;
+    cout << "\nthe number of odd: " << odd;
+}
