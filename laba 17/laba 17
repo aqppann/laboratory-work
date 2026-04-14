@@ -1,0 +1,50 @@
+// 1 ex
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool isPrime(int num) {
+    if (num <= 1)
+        return false;
+
+    for (int i = 2; i <= sqrt(num); i++) {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    int number;
+    cout << "enter number: ";
+    cin >> number;
+    if (isPrime(number))
+        cout << "the number is prime" << endl;
+    else
+        cout << "the number isn't prime";
+}
+
+// 2 ex
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool isPrime(int num) {
+    if (num <= 1)
+        return false;
+
+    for (int i = 2; i <= sqrt(num); i++) {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main(void) {
+    for(int i = 0; i <= 21; i++) {
+        if(isPrime(i))
+            cout << i << " ";
+    }
+    cout << endl;
+    return 0;
+}
